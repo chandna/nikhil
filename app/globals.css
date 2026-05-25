@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1a1814;
+  --ink-muted: #7a766e;
+  --ink-faint: #c8c4bc;
+  --paper: #f5f2ed;
+  --paper-warm: #eeeae3;
+  --paper-deep: #e8e3db;
+  --accent: #c84b2f;
+  --accent-light: #f5f0ec;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --line: 1px solid var(--ink-faint);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--ink-faint); border-radius: 2px; }
+
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
+  .font-serif { font-family: var(--serif); }
+  .font-sans { font-family: var(--sans); }
+  .text-ink { color: var(--ink); }
+  .text-ink-muted { color: var(--ink-muted); }
+  .text-ink-faint { color: var(--ink-faint); }
+  .text-accent { color: var(--accent); }
+  .bg-paper { background: var(--paper); }
+  .bg-paper-warm { background: var(--paper-warm); }
+  .bg-paper-deep { background: var(--paper-deep); }
+  .border-faint { border-color: var(--ink-faint); }
 }
