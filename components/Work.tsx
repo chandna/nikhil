@@ -54,21 +54,6 @@ export default function Work() {
         </span>
       </motion.div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        style={{
-          fontSize: "0.85rem",
-          color: "var(--ink-faint)",
-          fontStyle: "italic",
-          fontFamily: "var(--serif)",
-          marginBottom: "0",
-        }}
-      >
-        Click &ldquo;Read full case study&rdquo; to expand each project.
-      </motion.p>
-
       {/* Projects */}
       {projects.map((project, i) => (
         <ProjectCard key={project.id} project={project} index={i} />

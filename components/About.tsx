@@ -98,7 +98,7 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              I believe the best design is invisible. No friction, no confusion — just the feeling that something works exactly the way it should. Getting there takes obsession with the details most people skip.
+              I believe the best design is invisible. No friction, no confusion. Just the feeling that something works exactly the way it should. Getting there takes obsession with the details most people skip.
             </p>
             <p
               style={{
@@ -108,7 +108,7 @@ export default function About() {
                 marginBottom: "2rem",
               }}
             >
-              I&apos;ve spent 15 years designing at both ends of the spectrum — consumer products and enterprise tools. I started at IndiaMart, India&apos;s largest B2B platform, helping small businesses find their footing on the internet. Then SlideShare, where I helped grow the world&apos;s largest professional content platform. Eleven years ago I joined LinkedIn Bangalore, and since then I&apos;ve designed products used by hundreds of millions of professionals — from community experiences to sales intelligence tools.
+              I&apos;ve spent 15 years designing across consumer products and enterprise tools. I started at IndiaMart, India&apos;s largest B2B platform, helping small businesses find their footing on the internet. Then SlideShare, where I helped grow the world&apos;s largest professional content platform. Eleven years ago I joined LinkedIn Bangalore, and since then I&apos;ve designed products used by hundreds of millions of professionals, from community experiences to sales intelligence tools.
             </p>
           </motion.div>
 
