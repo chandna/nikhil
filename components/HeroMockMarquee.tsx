@@ -4,18 +4,18 @@ import Image from "next/image";
 import { Marquee } from "@/components/ui/3d-marquee";
 
 const mobileMocks = [
-  "/mocks/27.png",
-  "/mocks/29.png",
-  "/mocks/128.png",
-  "/mocks/129.png",
-  "/mocks/130.png",
-  "/mocks/131.png",
+  "/mocks/warm-intro-message.png",
+  "/mocks/warm-intro-3way-message.png",
+  "/mocks/group-creation.png",
+  "/mocks/group-welcome-new-member.png",
+  "/mocks/group-analytics.png",
+  "/mocks/group-detail-mobile.png",
 ];
 
 const desktopMocks = [
-  "/mocks/Find the right people.png",
-  "/mocks/Frame 2025790875.png",
-  "/mocks/Frame 2147234937.png",
+  "/mocks/sn-value-reporting.png",
+  "/mocks/sn-scheduled-message.png",
+  "/mocks/group-detail-web.png",
 ];
 
 function MobileCard({ src }: { src: string }) {

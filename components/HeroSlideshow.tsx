@@ -3,15 +3,15 @@
 import { FeatureCarousel } from "@/components/ui/feature-carousel";
 
 const mocks = [
-  { src: "/mocks/27.png",                     alt: "Warm Introductions",        width: 393,  height: 900 },
-  { src: "/mocks/Find the right people.png",  alt: "Find the right people",     width: 1440, height: 900 },
-  { src: "/mocks/29.png",                     alt: "Message compose",           width: 393,  height: 900 },
-  { src: "/mocks/Frame 2025790875.png",       alt: "Sales Navigator",           width: 1440, height: 900 },
-  { src: "/mocks/128.png",                    alt: "Group creation",            width: 393,  height: 900 },
-  { src: "/mocks/Frame 2147234937.png",       alt: "Groups organizer",          width: 1440, height: 900 },
-  { src: "/mocks/129.png",                    alt: "Group onboarding",          width: 393,  height: 900 },
-  { src: "/mocks/130.png",                    alt: "Group settings",            width: 393,  height: 900 },
-  { src: "/mocks/131.png",                    alt: "Member management",         width: 393,  height: 900 },
+  { src: "/mocks/warm-intro-message.png",        alt: "Warm intro message",          width: 393,  height: 900 },
+  { src: "/mocks/warm-intro-3way-message.png",    alt: "Warm intro 3-way message",    width: 393,  height: 900 },
+  { src: "/mocks/sn-value-reporting.png",         alt: "SN value reporting",          width: 1440, height: 900 },
+  { src: "/mocks/sn-scheduled-message.png",       alt: "SN scheduled message",        width: 1440, height: 900 },
+  { src: "/mocks/group-creation.png",             alt: "Group creation",              width: 393,  height: 900 },
+  { src: "/mocks/group-welcome-new-member.png",   alt: "Group welcome new member",    width: 393,  height: 900 },
+  { src: "/mocks/group-analytics.png",            alt: "Group analytics",             width: 393,  height: 900 },
+  { src: "/mocks/group-detail-mobile.png",        alt: "Group detail mobile",         width: 393,  height: 900 },
+  { src: "/mocks/group-detail-web.png",           alt: "Group detail web",            width: 1440, height: 900 },
 ];
 
 export default function HeroSlideshow() {

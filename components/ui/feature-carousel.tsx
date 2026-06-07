@@ -73,7 +73,7 @@ export const FeatureCarousel = React.forwardRef<HTMLDivElement, FeatureCarouselP
                 width: 'auto',
                 height: 'auto',
                 objectFit: 'contain',
-                borderRadius: isMobile ? '24px' : '16px',
+                borderRadius: isMobile ? '28px' : '16px',
                 boxShadow: '0 24px 60px rgba(0,0,0,0.12)',
                 border: '1px solid rgba(0,0,0,0.06)',
                 display: 'block',
