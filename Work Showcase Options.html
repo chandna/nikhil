@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work Showcase — 3 Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="showcase-options.css" />
+<style> html, body { margin: 0; background: #f0eee9; } </style>
+</head>
+<body class="bare">
+  <div id="root"></div>
+
+  <!-- section templates -->
+  <template id="opt-a">
+    <section class="showcase optA" data-screen-label="Option A — Gallery Wall">
+      <div class="sc-head">
+        <h2>Selected<br />Screens</h2>
+        <div class="sc-index">§ Showcase — product surfaces · 2022—2026</div>
+      </div>
+
+      <div class="grp">
+        <p class="grp-label">Sales Navigator — Warm Introductions &amp; AI</p>
+        <div class="webrow">
+          <div class="tile"><img class="shot-img" src="mocks/sn-scheduled-message.png" alt="" /><div class="tcap">Sales Assistant — AI-drafted follow-up</div></div>
+          <div class="tile"><img class="shot-img" src="mocks/sn-value-reporting.png" alt="" /><div class="tcap">Value reporting dashboard</div></div>
+        </div>
+        <div class="mobrow">
+          <div class="tile"><img class="shot-img" src="mocks/warm-intro-message.png" alt="" /><div class="tcap">3-way intro composer</div></div>
+          <div class="tile"><img class="shot-img" src="mocks/warm-intro-3way-message.png" alt="" /><div class="tcap">Requesting an introduction</div></div>
+        </div>
+      </div>
+
+      <div class="grp">
+        <p class="grp-label">LinkedIn Groups — Organizer redesign</p>
+        <div class="webrow single">
+          <div class="tile"><img class="shot-img" src="mocks/group-detail-web.png" alt="" /><div class="tcap">Group management — web</div></div>
+        </div>
+        <div class="mobrow">
+          <div class="tile"><img class="shot-img" src="mocks/group-analytics.png" alt="" /><div class="tcap">Organizer analytics</div></div>
+          <div class="tile"><img class="shot-img" src="mocks/group-creation.png" alt="" /><div class="tcap">Creation flow</div></div>
+          <div class="tile"><img class="shot-img" src="mocks/group-detail-mobile.png" alt="" /><div class="tcap">Group home — mobile</div></div>
+          <div class="tile"><img class="shot-img" src="mocks/group-welcome-new-member.png" alt="" /><div class="tcap">Automated welcome note</div></div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="opt-b">
+    <section class="showcase optB" data-screen-label="Option B — Device Showcase">
+      <div class="sc-head">
+        <h2>Selected<br />Screens</h2>
+        <div class="sc-index">§ Showcase — shipped surfaces</div>
+      </div>
+
+      <div class="grp">
+        <p class="grp-label">Sales Navigator — Warm Introductions &amp; AI</p>
+        <div class="cluster">
+          <div class="browser">
+            <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">linkedin.com/sales/assistant</div></div>
+            <div class="screen"><img class="shot-img" src="mocks/sn-scheduled-message.png" alt="" /></div>
+          </div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img class="shot-img" src="mocks/warm-intro-message.png" alt="" /></div></div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img class="shot-img" src="mocks/warm-intro-3way-message.png" alt="" /></div></div>
+        </div>
+        <p class="cap"><b>Warm Introductions</b> — consolidating four connection surfaces into one trusted path.</p>
+      </div>
+
+      <div class="grp">
+        <p class="grp-label">LinkedIn Groups — Organizer redesign</p>
+        <div class="cluster">
+          <div class="browser">
+            <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">linkedin.com/groups/manage</div></div>
+            <div class="screen"><img class="shot-img" src="mocks/group-detail-web.png" alt="" /></div>
+          </div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img class="shot-img" src="mocks/group-analytics.png" alt="" /></div></div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img class="shot-img" src="mocks/group-welcome-new-member.png" alt="" /></div></div>
+        </div>
+        <p class="cap"><b>Groups Organizer</b> — automation &amp; analytics for overwhelmed admins.</p>
+      </div>
+    </section>
+  </template>
+
+  <template id="opt-c">
+    <section class="showcase optC" data-screen-label="Option C — Spotlight Rows">
+      <div class="sc-head">
+        <h2>Selected<br />Screens</h2>
+        <div class="sc-index">§ Showcase — two flagship projects</div>
+      </div>
+
+      <div class="row">
+        <div class="lead">
+          <div class="frame"><img class="shot-img" src="mocks/sn-value-reporting.png" alt="" /></div>
+        </div>
+        <div class="side">
+          <div class="num">01 — Sales Navigator</div>
+          <h3>Warm Introductions</h3>
+          <p>Turning ambiguous network signals into confident action — with AI-drafted outreach and native 3-way introductions.</p>
+          <div class="thumbs">
+            <div class="thumb"><img class="shot-img" src="mocks/warm-intro-message.png" alt="" /></div>
+            <div class="thumb"><img class="shot-img" src="mocks/warm-intro-3way-message.png" alt="" /></div>
+          </div>
+          <div class="tags"><span>Enterprise</span><span>AI</span><span>2026</span></div>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="lead">
+          <div class="frame"><img class="shot-img" src="mocks/group-detail-web.png" alt="" /></div>
+        </div>
+        <div class="side">
+          <div class="num">02 — LinkedIn Groups</div>
+          <h3>Groups Organizer</h3>
+          <p>An end-to-end redesign giving admins automation and analytics — improving not just speed, but community quality.</p>
+          <div class="thumbs">
+            <div class="thumb"><img class="shot-img" src="mocks/group-analytics.png" alt="" /></div>
+            <div class="thumb"><img class="shot-img" src="mocks/group-creation.png" alt="" /></div>
+          </div>
+          <div class="tags"><span>Consumer</span><span>Automation</span><span>2022</span></div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="design-canvas.jsx"></script>
+
+  <script type="text/babel">
+    function Tpl({ id }) {
+      const ref = React.useRef(null);
+      React.useEffect(() => {
+        const t = document.getElementById(id);
+        if (t && ref.current && !ref.current.firstChild) {
+          ref.current.appendChild(t.content.cloneNode(true));
+        }
+      }, [id]);
+      return <div ref={ref}></div>;
+    }
+    function App() {
+      return (
+        <DesignCanvas>
+          <DCSection id="showcase" title="Work Showcase — three directions" subtitle="Same monochrome system · all use your real mocks. Pick one and I'll wire it into the page.">
+            <DCArtboard id="a" label="A · Gallery Wall" width={1280} height={2160}><Tpl id="opt-a" /></DCArtboard>
+            <DCArtboard id="b" label="B · Device Showcase" width={1280} height={2080}><Tpl id="opt-b" /></DCArtboard>
+            <DCArtboard id="c" label="C · Spotlight Rows" width={1280} height={1360}><Tpl id="opt-c" /></DCArtboard>
+          </DCSection>
+        </DesignCanvas>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
