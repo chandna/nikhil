@@ -19,3 +19,9 @@ next-env.d.ts
 
 # Claude Code
 .claude/
+
+# Source videos (keep only converted .mp4s)
+public/videos/*.mov
+
+# One-time scripts
+scripts/

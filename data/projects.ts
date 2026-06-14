@@ -35,7 +35,7 @@ export const projects: Project[] = [
     ],
     tags: ["Enterprise Sales Navigator", "IA & Systems", "AI Ranking", "Explainability", "UX Strategy"],
     url: "linkedin.com/sales/search/people",
-    video: "/videos/warm-introductions.mov",
+    video: "/videos/warm-introductions.mp4",
   },
   {
     id: "product-x-code",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     ],
     tags: ["AI Agents", "Design Systems", "Design Leadership", "Design Engineering"],
     url: "linkedin.com/sales/playground",
-    video: "/videos/product-x-code.mov",
+    video: "/videos/product-x-code.mp4",
   },
   {
     id: "groups-organizer",
@@ -77,6 +77,6 @@ export const projects: Project[] = [
     ],
     tags: ["Consumer", "LinkedIn Groups", "Community", "End-to-end Design", "Automation", "Mobile"],
     url: "linkedin.com/groups",
-    video: "/videos/groups-organizer.mov",
+    video: "/videos/groups-organizer.mp4",
   },
 ];
