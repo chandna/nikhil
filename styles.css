@@ -319,6 +319,8 @@ body.bare .hero { min-height: 100vh; }
 @media (max-width: 760px){
   .case-head { grid-template-columns: 34px 1fr; }
   .case-right { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 18px; }
+  .case-kpi { text-align: left; }
+  .case-right { align-items: flex-end; }
 }
 
 /* expandable detail */
