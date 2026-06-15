@@ -190,7 +190,7 @@ body.bare .hero { min-height: 100vh; }
 .btn {
   display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
   font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 13px 20px; border: 1px solid var(--ink); color: var(--ink); background: transparent;
+  padding: 13px 20px; border: 1px solid var(--ink); color: var(--ink); background: transparent; border-radius: 999px;
   cursor: pointer; transition: background .35s var(--ease), color .35s var(--ease), transform .25s var(--ease);
 }
 .btn:hover { background: var(--ink); color: var(--paper); }
