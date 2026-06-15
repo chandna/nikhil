@@ -319,7 +319,8 @@ body.bare .hero { min-height: 100vh; }
 @media (max-width: 760px){
   .case-head { grid-template-columns: 34px 1fr; }
   .case-right { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 18px; }
-  .case-kpi { text-align: left; }
+  .case-kpi { text-align: left; padding-left: calc(34px + clamp(16px, 4vw, 48px)); max-width: none; }
+  .case-kpi .lbl { white-space: nowrap; }
   .case-right { align-items: flex-end; }
 }
 
