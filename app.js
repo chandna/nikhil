@@ -119,6 +119,83 @@
   window.applyHero();
 })();
 
+/* ---------- hero particle + grid effect ---------- */
+(function(){
+  var btn    = document.getElementById('hb-effect-btn');
+  var effect = document.getElementById('hb-effect');
+  var canvas = document.getElementById('hb-canvas');
+  var hero   = document.querySelector('.hero-b');
+  if (!btn || !effect || !canvas || !hero) return;
+
+  var ctx = canvas.getContext('2d');
+  var raf = 0;
+  var on  = false;
+  var particles = [];
+
+  function setSize() {
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+
+  function make() {
+    var d = Math.random() * 600 + 100;
+    return { x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+             speed: Math.random() / 5 + 0.1, opacity: 0.88,
+             fadeStart: Date.now() + d, fadingOut: false };
+  }
+
+  function reset(p) {
+    var d = Math.random() * 600 + 100;
+    p.x = Math.random() * canvas.width; p.y = Math.random() * canvas.height;
+    p.speed = Math.random() / 5 + 0.1;  p.opacity = 0.88;
+    p.fadeStart = Date.now() + d;        p.fadingOut = false;
+  }
+
+  function init() {
+    var n = Math.floor((canvas.width * canvas.height) / 7000);
+    particles = [];
+    for (var i = 0; i < n; i++) particles.push(make());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var now = Date.now();
+    particles.forEach(function(p) {
+      p.y -= p.speed;
+      if (p.y < 0) reset(p);
+      if (!p.fadingOut && now > p.fadeStart) p.fadingOut = true;
+      if (p.fadingOut) { p.opacity -= 0.008; if (p.opacity <= 0) reset(p); }
+      ctx.fillStyle = 'rgba(250,250,250,' + p.opacity + ')';
+      ctx.fillRect(p.x, p.y, 0.6, Math.random() * 2 + 1);
+    });
+    raf = requestAnimationFrame(draw);
+  }
+
+  function restart() {
+    setSize(); init();
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(draw);
+  }
+
+  btn.addEventListener('click', function() {
+    on = !on;
+    if (on) {
+      effect.hidden = false;
+      btn.textContent = '✕ Hide effect';
+      btn.classList.add('on');
+      restart();
+    } else {
+      effect.hidden = true;
+      btn.textContent = '✦ Preview effect';
+      btn.classList.remove('on');
+      cancelAnimationFrame(raf);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  });
+
+  window.addEventListener('resize', function() { if (on) restart(); });
+})();
+
 /* ---------- morph word cycling ---------- */
 (function(){
   var el = document.querySelector('.morph-word');
