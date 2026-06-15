@@ -388,7 +388,10 @@ image-slot {
 .cap p { margin: 14px 0 0; color: var(--ink-soft); font-size: 0.96rem; line-height: 1.55; }
 .cap .spacer { flex: 1; }
 @media (max-width: 900px){ .cap-grid { grid-template-columns: 1fr 1fr; } .cap:nth-child(2){ border-right:0; } .cap{ border-bottom: 1px solid var(--line); padding-right: 26px !important; } .cap:nth-child(odd){ padding-left: 0;} }
-@media (max-width: 560px){ .cap-grid { grid-template-columns: 1fr; } .cap{ border-right: 0; min-height: 0; } }
+@media (max-width: 560px){
+  .cap-grid { grid-template-columns: 1fr; }
+  .cap { border-right: 0; min-height: 0; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 24px !important; height: auto !important; }
+}
 
 /* ============================================================
    CONTACT
