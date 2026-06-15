@@ -459,15 +459,6 @@ body[data-tone="cool"]   { --paper: #eceef0; --paper-2: #e0e3e6; }
 @keyframes hbDrawX { 0%{transform:scaleX(0);opacity:0} 60%{opacity:.9} 100%{transform:scaleX(1);opacity:.75} }
 @keyframes hbDrawY { 0%{transform:scaleY(0);opacity:0} 60%{opacity:.9} 100%{transform:scaleY(1);opacity:.75} }
 
-.hb-effect-btn {
-  position: absolute; bottom: 2rem; right: 2rem; z-index: 10;
-  background: none; border: 1px solid rgba(244,241,234,.2); color: rgba(244,241,234,.4);
-  padding: .4rem 1rem; border-radius: 999px;
-  font: 500 .65rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
-  cursor: pointer; transition: color .2s, border-color .2s;
-}
-.hb-effect-btn:hover, .hb-effect-btn.on { color: var(--d-fg); border-color: rgba(244,241,234,.55); }
-
 /* ============================================================
    MORPH WORD ANIMATION
    ============================================================ */

@@ -119,17 +119,14 @@
   window.applyHero();
 })();
 
-/* ---------- hero particle + grid effect ---------- */
+/* ---------- hero particle effect ---------- */
 (function(){
-  var btn    = document.getElementById('hb-effect-btn');
-  var effect = document.getElementById('hb-effect');
   var canvas = document.getElementById('hb-canvas');
   var hero   = document.querySelector('.hero-b');
-  if (!btn || !effect || !canvas || !hero) return;
+  if (!canvas || !hero) return;
 
   var ctx = canvas.getContext('2d');
   var raf = 0;
-  var on  = false;
   var particles = [];
 
   function setSize() {
@@ -171,29 +168,9 @@
     raf = requestAnimationFrame(draw);
   }
 
-  function restart() {
-    setSize(); init();
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(draw);
-  }
-
-  btn.addEventListener('click', function() {
-    on = !on;
-    if (on) {
-      effect.hidden = false;
-      btn.textContent = '✕ Hide effect';
-      btn.classList.add('on');
-      restart();
-    } else {
-      effect.hidden = true;
-      btn.textContent = '✦ Preview effect';
-      btn.classList.remove('on');
-      cancelAnimationFrame(raf);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  });
-
-  window.addEventListener('resize', function() { if (on) restart(); });
+  setSize(); init();
+  raf = requestAnimationFrame(draw);
+  window.addEventListener('resize', function() { setSize(); init(); });
 })();
 
 /* ---------- morph word cycling ---------- */
