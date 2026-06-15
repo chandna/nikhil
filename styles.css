@@ -440,4 +440,39 @@ image-slot {
 
 /* ---------- paper tones (tweakable) ---------- */
 body[data-tone="cool"]   { --paper: #eceef0; --paper-2: #e0e3e6; }
+
+/* ============================================================
+   MORPH WORD ANIMATION
+   ============================================================ */
+.morph-wrap { display: inline; }
+.morph-word  { display: inline; color: inherit; }
+
+/* Fade (default) */
+.morph-word.morph-in  { animation: mwFadeIn  .45s ease forwards; }
+.morph-word.morph-out { animation: mwFadeOut .4s ease forwards; }
+
+/* Slide up */
+body[data-morph="slide"] .morph-wrap { display: inline-flex; overflow: hidden; vertical-align: bottom; line-height: inherit; }
+body[data-morph="slide"] .morph-word { display: inline-block; }
+body[data-morph="slide"] .morph-word.morph-in  { animation: mwSlideIn  .5s cubic-bezier(.16,1,.3,1) forwards; }
+body[data-morph="slide"] .morph-word.morph-out { animation: mwSlideOut .4s cubic-bezier(.16,1,.3,1) forwards; }
+
+/* Blur */
+body[data-morph="blur"] .morph-word.morph-in  { animation: mwBlurIn  .5s ease forwards; }
+body[data-morph="blur"] .morph-word.morph-out { animation: mwBlurOut .4s ease forwards; }
+
+/* Typewriter */
+body[data-morph="type"] .morph-word.morph-in,
+body[data-morph="type"] .morph-word.morph-out { animation: none; }
+body[data-morph="type"] .morph-word::after { content: '|'; animation: mwBlink .75s step-end infinite; }
+
+@keyframes mwFadeIn   { from { opacity: 0 }               to { opacity: 1 } }
+@keyframes mwFadeOut  { from { opacity: 1 }               to { opacity: 0 } }
+@keyframes mwSlideIn  { from { opacity: 0; transform: translateY(.55em) }  to { opacity: 1; transform: none } }
+@keyframes mwSlideOut { from { opacity: 1; transform: none }               to { opacity: 0; transform: translateY(-.4em) } }
+@keyframes mwBlurIn   { from { opacity: 0; filter: blur(7px) }  to { opacity: 1; filter: blur(0) } }
+@keyframes mwBlurOut  { from { opacity: 1; filter: blur(0) }    to { opacity: 0; filter: blur(7px) } }
+@keyframes mwBlink    { 0%,100% { opacity: 1 } 50% { opacity: 0 } }
+
+@media (prefers-reduced-motion: reduce) { .morph-word, .morph-word.morph-in, .morph-word.morph-out { animation: none !important; } }
 body[data-tone="bright"] { --paper: #f8f7f3; --paper-2: #ecebe5; }

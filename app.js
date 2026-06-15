@@ -118,3 +118,62 @@
   /* ---------- init ---------- */
   window.applyHero();
 })();
+
+/* ---------- morph word cycling ---------- */
+(function(){
+  var el = document.querySelector('.morph-word');
+  if (!el) return;
+
+  var words = ['simple', 'intuitive', 'accessible', 'scalable'];
+  var idx = 0;
+  var INTERVAL = 2800;
+  var OUT_DUR  = 420;
+
+  function getStyle() {
+    return document.body.getAttribute('data-morph') || 'slide';
+  }
+
+  function runCycle() {
+    var style = getStyle();
+    if (style === 'type') {
+      typeOut(el.textContent);
+    } else {
+      el.classList.remove('morph-in');
+      el.classList.add('morph-out');
+      setTimeout(function(){
+        idx = (idx + 1) % words.length;
+        el.textContent = words[idx];
+        el.classList.remove('morph-out');
+        void el.offsetWidth; /* force reflow so animation restarts */
+        el.classList.add('morph-in');
+      }, OUT_DUR);
+    }
+  }
+
+  function typeOut(current) {
+    var i = current.length;
+    function del() {
+      if (i > 0) {
+        el.textContent = current.slice(0, --i);
+        setTimeout(del, 55);
+      } else {
+        idx = (idx + 1) % words.length;
+        setTimeout(function(){ typeIn(words[idx]); }, 120);
+      }
+    }
+    del();
+  }
+
+  function typeIn(word) {
+    var j = 0;
+    function typ() {
+      el.textContent = word.slice(0, ++j);
+      if (j < word.length) setTimeout(typ, 70);
+    }
+    typ();
+  }
+
+  document.body.setAttribute('data-morph', 'slide');
+
+  setInterval(runCycle, INTERVAL);
+})();
