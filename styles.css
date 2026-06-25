@@ -356,7 +356,7 @@ image-slot {
 /* ============================================================
    ABOUT
    ============================================================ */
-.about { background: var(--d-bg); color: var(--d-fg); }
+.about { background: var(--d-bg); color: var(--d-fg); padding-bottom: 3px; }
 .about .eyebrow { color: var(--d-soft); }
 .about .eyebrow::before { background: var(--d-line); }
 .about-grid { display: grid; grid-template-columns: 1fr 0.85fr; gap: clamp(36px, 6vw, 90px); align-items: start; }
@@ -394,6 +394,49 @@ image-slot {
 @media (max-width: 560px){
   .cap-grid { grid-template-columns: 1fr; }
   .cap { border-right: 0; min-height: 0; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 24px !important; height: auto !important; }
+}
+
+/* ============================================================
+   PHOTO STRIP
+   ============================================================ */
+.collage-outer { margin-top: 48px; overflow: hidden; }
+
+.photo-strip {
+  display: flex;
+  width: 100%;
+  height: 380px;
+  gap: 3px;
+}
+
+.photo-strip .cc {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  transition: flex 0.5s cubic-bezier(.16,1,.3,1);
+  cursor: pointer;
+}
+
+.photo-strip .cc:hover,
+.photo-strip .cc.active { flex: 1.4; }
+
+.photo-strip .cc img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(1);
+  transition: filter .5s ease;
+}
+.photo-strip .cc:hover img,
+.photo-strip .cc.active img { filter: grayscale(0); }
+
+/* Per-image crop tweaks */
+.photo-strip .cc:nth-child(8) img { object-position: 32% center; }
+
+
+@media (max-width: 1024px) {
+  .collage-outer { overflow-x: auto; }
+  .photo-strip { width: max-content; }
+  .photo-strip .cc { flex: none; width: 220px; }
+  .photo-strip .cc:hover,
+  .photo-strip .cc.active { flex: none; width: 220px; }
 }
 
 /* ============================================================

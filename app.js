@@ -173,6 +173,24 @@
   window.addEventListener('resize', function() { setSize(); init(); });
 })();
 
+/* ---------- photo strip — tap to expand on touch devices ---------- */
+(function(){
+  var strip = document.getElementById('photo-strip');
+  if (!strip) return;
+  strip.querySelectorAll('.cc').forEach(function(cc) {
+    cc.addEventListener('click', function() {
+      var isActive = cc.classList.contains('active');
+      strip.querySelectorAll('.cc').forEach(function(c) { c.classList.remove('active'); });
+      if (isActive) {
+        strip.classList.remove('has-active');
+      } else {
+        cc.classList.add('active');
+        strip.classList.add('has-active');
+      }
+    });
+  });
+})();
+
 /* ---------- morph word cycling ---------- */
 (function(){
   var el = document.querySelector('.morph-word');
